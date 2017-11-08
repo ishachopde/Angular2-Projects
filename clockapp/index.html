@@ -1,0 +1,27 @@
+<html ng-app="myApp">
+    <head>
+        <script src="angular.js"></script>
+    </head>
+    <body>
+        <div ng-controller="MainCtrl">
+                <h1> Hello Angular1 !</h1>
+                <p ng-if="hourOfDay < 12">Good Morning!</p>
+                <p ng-if="hourOfDay > 17"> Good Evening!</p>
+                <p>The hour of the day is: {{hourOfDay}}</p>
+        </div> 
+    </body>
+
+    <script>
+        var module = angular.module("myApp", [])
+        module.controller("MainCtrl", Main);
+
+        function Main($scope){ //$scope is an objec(binding part) in agularjs
+            //dependency injection is simply declaring what you want
+
+            $scope.hourOfDay = 18;
+            console.log("Main Called!");
+        }
+    </script>
+   
+
+</html>

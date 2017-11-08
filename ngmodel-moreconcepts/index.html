@@ -1,0 +1,28 @@
+<html ng-app="ngModelConcepts">
+        <head>
+            <script src="angular.js"></script>
+            <script src="app.js"></script>
+        </head>
+        <body ng-controller="moreConcepts">
+            <div>
+                <h1>ng-model more concepts examples</h1>
+                <p>TextBox: <input type="text" ng-change="textBoxChange()" ng-model="textString"></input><br></p>
+                <p>CheckBox: <input type="checkbox" ng-model="booleanValue"></input><br></p>
+                <p>Date: <input type="date" ng-model="dateValue"></input><br></p>
+                <p>Radio: 
+                    <input type="radio" ng-model="radioValue" value="o1">Option 1</input>
+                    <input type="radio" ng-model="radioValue" value="o2">Option 2</input>
+                    <input type="radio" ng-model="radioValue" value="o3">Option 3</input>
+                
+                </p>
+            </div>
+                   
+            <div>
+                <p>TextBox: {{textString}}</p>
+                <p>CheckBox: {{booleanValue}}</p>
+                <p>Date: {{dateValue}}</p>
+                <p>Radio: {{radioValue}}</p>
+                
+            </div>
+        </body>
+</html>
