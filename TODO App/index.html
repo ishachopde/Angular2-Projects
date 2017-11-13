@@ -1,0 +1,54 @@
+<html ng-app="TodoApp">
+        <head>
+            <title>
+                TODO App
+            </title>
+            <style>
+            .headings{
+                color: dodgerblue;
+                font-family: Georgia, 'Times New Roman', Times, serif;
+                text-align: center;
+            }
+
+            .para{
+                color: coral;
+                font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+                font-size: 20px;
+            }
+            
+            </style>
+            <script src="angular.js"></script>
+            <script src="app.js"></script>
+        </head>
+        <body>
+           <h1 class="headings">TODO App</h1> 
+           <div ng-controller="Todos as ctrl">
+               <div>
+                    <p class="para">
+                            Add your Tasks: 
+                    </p>
+                    <input type="text" ng-model="ctrl.newTodo">
+                    <button ng-click="ctrl.addNewTodo()">Add Todos</button>
+                    
+               </div>
+                
+               <div>
+                    <p>Your Todos:</p>
+                    <button ng-hide="ctrl.editMode" ng-click="ctrl.triggerEditMode()">Edit Tasks</button>
+                    <button ng-show="ctrl.editMode" ng-click="ctrl.triggerEditMode()">Done</button>
+                    <ol>
+                        <li ng-repeat="todo in ctrl.todos track by $index">
+                            <span  ng-hide="ctrl.editMode" ng-bind="todo">   </span>                        
+                            <input ng-model="todo" ng-show="ctrl.editMode" type="text">
+                            <button ng-hide="ctrl.editMode" ng-click="ctrl.deleteTodo($index)">Delete</button>
+                        </li>
+                    </ol>
+                    
+                </div>
+               
+            </div>
+        
+            
+           
+        </body>
+</html>
